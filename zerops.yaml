@@ -36,7 +36,7 @@ zerops:
       base: dotnet@9
       start: dotnet Worker.dll
       initCommands:
-        - zsc execOnce migrate -- dotnet ./migrate/out/Migrate.dll
+        - zsc execOnce ${ZEROPS_appVersionId} -- dotnet ./migrate/out/Migrate.dll
       envVariables:
         NATS_URL: ${pubsub_connectionString}
         DB_CONNECTION_STRING: Server=${db_hostname};Database=${db_dbName};User=${db_user};Password=${db_password};
